@@ -4,7 +4,6 @@ import com.cosmicapps.valueline.valuation.HistoricalValue;
 import com.cosmicapps.valueline.valuation.ValueLineDocument;
 
 import java.util.Comparator;
-import java.util.Objects;
 import java.util.Optional;
 
 public class PerformanceMetricsValueLine implements PerformanceMetrics {
@@ -13,6 +12,11 @@ public class PerformanceMetricsValueLine implements PerformanceMetrics {
 
     public PerformanceMetricsValueLine(ValueLineDocument valueLineDocument) {
         this.valueLineDocument = valueLineDocument;
+    }
+
+    @Override
+    public String ticker() {
+        return "null";
     }
 
     @Override
@@ -49,7 +53,7 @@ public class PerformanceMetricsValueLine implements PerformanceMetrics {
 
         Optional<HistoricalValue> min = valueLineDocument.getAvgAnnualPERatioPerShare().historicalValues().stream()
                 .skip(1)//do not count the last column value
-                .filter(h->h.getValue()!=null)
+                .filter(h -> h.getValue() != null)
                 .limit(5)
                 .min(Comparator.comparingDouble(HistoricalValue::getValue));
 

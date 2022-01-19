@@ -1,25 +1,29 @@
 package com.cosmicapps.valueline;
 
+import com.cosmicapps.valueline.analytics.PerformanceMetricsValueLine;
 import com.cosmicapps.valueline.aws.textract.AnalyzedDocument;
+import com.cosmicapps.valueline.csv.PerformanceMetricsCsv;
+import com.cosmicapps.valueline.csv.PerformanceMetricsCsvWriter;
 import com.cosmicapps.valueline.valuation.ValuationTable;
 import com.cosmicapps.valueline.valuation.ValueLineDocument;
 import com.cosmicapps.valueline.valuation.ValueLineDocumentBuilder;
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import software.amazon.awssdk.core.SdkBytes;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.textract.TextractClient;
 import software.amazon.awssdk.services.textract.model.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException {
 
         final String USAGE = "\n" +
                 "Usage:\n" +
@@ -27,23 +31,31 @@ public class App {
                 "Where:\n" +
                 "    sourceDoc - the path where the document is located (must be an image, for example, C:/AWS/book.png). \n";
 
-        if (args.length != 1) {
+        if (args.length != 2) {
             System.out.println(USAGE);
             System.exit(1);
         }
 
         String sourceDoc = args[0];
+        String destinationDoc = args[1];
         Region region = Region.US_WEST_1;
         TextractClient textractClient = TextractClient.builder()
                 .region(region)
                 .build();
 
-        analyzeDoc(textractClient, sourceDoc);
-        textractClient.close();
+        final ValueLineDocument valueLineDocument;
+        try {
+            valueLineDocument = analyzeDoc(textractClient, sourceDoc);
+        } finally {
+            textractClient.close();
+        }
+
+        new PerformanceMetricsCsvWriter(Paths.get(destinationDoc)).write(Arrays.asList(new PerformanceMetricsCsv(new PerformanceMetricsValueLine(valueLineDocument))));
+
     }
 
     // snippet-start:[textract.java2._analyze_doc.main]
-    public static void analyzeDoc(TextractClient textractClient, String sourceDoc) {
+    public static ValueLineDocument analyzeDoc(TextractClient textractClient, String sourceDoc) {
 
         try {
             InputStream sourceStream = new FileInputStream(new File(sourceDoc));
@@ -70,11 +82,11 @@ public class App {
             if (!valuationTableOptional.isPresent()) {
                 throw new IllegalArgumentException("Required Data table missing: Valuation Data");
             }
-            ValueLineDocument valueLineDocument = new ValueLineDocumentBuilder()
+            return new ValueLineDocumentBuilder()
                     .with(analyzedDocument.getTableValues(valuationTableOptional.get()))
                     .build();
 
-            System.out.println(valueLineDocument);
+            //System.out.println(valueLineDocument);
 
 
         } catch (TextractException | FileNotFoundException | InstantiationException e) {
@@ -82,6 +94,7 @@ public class App {
             System.err.println(e.getMessage());
             System.exit(1);
         }
+        return null;
     }
 
     public static void DisplayBlockInfo(Block block) {
