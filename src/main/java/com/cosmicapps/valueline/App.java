@@ -10,6 +10,7 @@ import com.cosmicapps.valueline.valuation.ValueLineDocument;
 import com.cosmicapps.valueline.valuation.ValueLineDocumentBuilder;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
+import lombok.extern.slf4j.Slf4j;
 import software.amazon.awssdk.core.SdkBytes;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.textract.TextractClient;
@@ -22,6 +23,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 public class App {
 
     public static void main(String[] args) throws CsvRequiredFieldEmptyException, CsvDataTypeMismatchException, IOException {
@@ -48,9 +50,11 @@ public class App {
         try {
             valueLineDocument = analyzeDoc(textractClient, sourceDoc);
         } finally {
+            log.trace("closing aws client...");
             textractClient.close();
         }
 
+        log.debug("writing csv...");
         new PerformanceMetricsCsvWriter(Paths.get(destinationDoc)).write(Arrays.asList(new PerformanceMetricsCsv(new PerformanceMetricsValueLine(valueLineDocument))));
 
     }
@@ -59,6 +63,8 @@ public class App {
     public static ValueLineDocument analyzeDoc(TextractClient textractClient, String sourceDoc) {
 
         try {
+
+            log.debug("reading source file...");
             InputStream sourceStream = new FileInputStream(new File(sourceDoc));
             SdkBytes sourceBytes = SdkBytes.fromInputStream(sourceStream);
 
@@ -75,12 +81,14 @@ public class App {
                     .document(myDoc)
                     .build();
 
+            log.debug("analyzing file...");
             AnalyzeDocumentResponse analyzeDocument = textractClient.analyzeDocument(analyzeDocumentRequest);
             List<Block> docInfo = analyzeDocument.blocks();
             AnalyzedDocument analyzedDocument = new AnalyzedDocument(docInfo);
             //analyzedDocument.printLines();
 
 
+            log.debug("extracting information...");
             Optional<Block> valuationTableOptional = new ValuationTable(analyzedDocument).valuationTable();
             if (!valuationTableOptional.isPresent()) {
                 throw new IllegalArgumentException("Required Data table missing: Valuation Data");

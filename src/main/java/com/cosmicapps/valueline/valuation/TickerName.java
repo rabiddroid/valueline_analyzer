@@ -13,7 +13,7 @@ public class TickerName {
     public String get() {
 
         return analyzedDocument.getLines().stream()
-                .filter(b -> b.text().startsWith("NYSE-"))
+                .filter(b -> b.text().startsWith("NYSE-") || b.text().startsWith("NDQ-"))
                 .findFirst()
                 .map(b -> b.text().split("-")[1])
                 .orElse("N/A");
