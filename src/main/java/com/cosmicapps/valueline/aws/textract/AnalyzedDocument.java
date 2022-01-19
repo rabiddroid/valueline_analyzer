@@ -28,6 +28,14 @@ public class AnalyzedDocument {
 
     }
 
+    public List<Block> getLines() {
+
+        return data.values().stream()
+                .filter(b -> BlockType.LINE.equals(b.blockType()))
+                .collect(Collectors.toList());
+
+    }
+
     List<Block> getTableCells(Block table) {
 
         List<Relationship> children = table.relationships().stream()
@@ -82,6 +90,12 @@ public class AnalyzedDocument {
 
     public  List<List<String>> getTableValues(Block table){
         return getTableValues(getTableCells(table));
+    }
+
+    public void printLines(){
+        getLines().stream()
+                //.filter(b->"nyse-v".equalsIgnoreCase(b.text()))
+                .forEach(System.out::println);
     }
 
     public void printAllBlocks() {

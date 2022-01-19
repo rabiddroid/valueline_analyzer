@@ -16,7 +16,7 @@ public class PerformanceMetricsValueLine implements PerformanceMetrics {
 
     @Override
     public String ticker() {
-        return "null";
+        return valueLineDocument.getTicker();
     }
 
     @Override

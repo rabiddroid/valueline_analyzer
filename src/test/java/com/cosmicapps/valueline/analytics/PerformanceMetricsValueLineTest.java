@@ -23,7 +23,7 @@ public class PerformanceMetricsValueLineTest {
         EarningsPerShare earningsPerShare = createEarnings();
         DividendsDeclaredPerShare dividendPerShare = createDividends();
         AvgAnnualPERatioPerShare peRatioPerShare = createPERatios();
-        valueLineDocument = new ValueLineDocument(earningsPerShare, dividendPerShare, peRatioPerShare);
+        valueLineDocument = new ValueLineDocument("V",earningsPerShare, dividendPerShare, peRatioPerShare);
         performanceMetricsValueLine = new PerformanceMetricsValueLine(valueLineDocument);
 
     }

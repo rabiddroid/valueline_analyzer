@@ -10,6 +10,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class ValueLineDocument {
 
+    private String ticker;
     private EarningsPerShare earningsPerShare;
     private DividendsDeclaredPerShare dividendsDeclaredPerShare;
     private AvgAnnualPERatioPerShare avgAnnualPERatioPerShare;

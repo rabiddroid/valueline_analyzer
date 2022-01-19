@@ -4,6 +4,7 @@ import com.cosmicapps.valueline.analytics.PerformanceMetricsValueLine;
 import com.cosmicapps.valueline.aws.textract.AnalyzedDocument;
 import com.cosmicapps.valueline.csv.PerformanceMetricsCsv;
 import com.cosmicapps.valueline.csv.PerformanceMetricsCsvWriter;
+import com.cosmicapps.valueline.valuation.TickerName;
 import com.cosmicapps.valueline.valuation.ValuationTable;
 import com.cosmicapps.valueline.valuation.ValueLineDocument;
 import com.cosmicapps.valueline.valuation.ValueLineDocumentBuilder;
@@ -77,13 +78,16 @@ public class App {
             AnalyzeDocumentResponse analyzeDocument = textractClient.analyzeDocument(analyzeDocumentRequest);
             List<Block> docInfo = analyzeDocument.blocks();
             AnalyzedDocument analyzedDocument = new AnalyzedDocument(docInfo);
-            //analyzedDocument.printAllBlocks();
+            //analyzedDocument.printLines();
+
+
             Optional<Block> valuationTableOptional = new ValuationTable(analyzedDocument).valuationTable();
             if (!valuationTableOptional.isPresent()) {
                 throw new IllegalArgumentException("Required Data table missing: Valuation Data");
             }
             return new ValueLineDocumentBuilder()
                     .with(analyzedDocument.getTableValues(valuationTableOptional.get()))
+                    .with(new TickerName(analyzedDocument).get())
                     .build();
 
             //System.out.println(valueLineDocument);

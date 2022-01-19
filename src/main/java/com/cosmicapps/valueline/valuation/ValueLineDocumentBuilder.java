@@ -11,11 +11,17 @@ import java.util.List;
 @Data
 public class ValueLineDocumentBuilder {
 
-    List<List<String>> data;
+    private List<List<String>> data;
+    private String ticker;
 
 
-    public ValueLineDocumentBuilder with(List<List<String>> table) {
-        this.data = table;
+    public ValueLineDocumentBuilder with(List<List<String>> valuationTable) {
+        this.data = valuationTable;
+        return this;
+    }
+
+    public ValueLineDocumentBuilder with(String ticker) {
+        this.ticker = ticker;
         return this;
     }
 
@@ -25,6 +31,7 @@ public class ValueLineDocumentBuilder {
         ReferenceFieldLocation referenceFieldLocation = ReferenceFieldLocation.find(data);
 
         return new ValueLineDocument(
+                this.ticker,
                 new ValuesPerShareBuilder()
                         .with(data)
                         .withReferencePointRow(referenceFieldLocation.getRow())
