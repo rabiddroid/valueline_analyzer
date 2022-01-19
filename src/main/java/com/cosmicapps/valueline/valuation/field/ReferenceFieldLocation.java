@@ -8,6 +8,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class ReferenceFieldLocation {
+
     private int row;
     private int col;
     private String columnText;

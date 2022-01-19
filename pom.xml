@@ -8,7 +8,7 @@
   <artifactId>awsapp</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>awsapp</name>
+  <name>valueline_analyzer</name>
   <dependencyManagement>
     <dependencies>
       <dependency>
