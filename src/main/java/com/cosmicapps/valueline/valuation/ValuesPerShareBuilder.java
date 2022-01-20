@@ -10,6 +10,8 @@ import java.util.List;
 public class ValuesPerShareBuilder {
 
 
+    public static final int REFERENCE_ROW_TO_YEAR_DISTANCE = -3;//TODO: NEED A MORE CONSTANT WAY TO CALCULATE YEAR ROW/COL
+    public static final int REFERENCE_COL_TO_YEAR_DISTANCE = -1;
     private ValuationField valuationField;
     private List<List<String>> table;
     private int referenceFieldNameRow = -1;
@@ -27,8 +29,8 @@ public class ValuesPerShareBuilder {
 
     protected List<HistoricalValue> getHistoricalValues(Point valuePerShareNameCoordinate) {
         //update historical 5 values
-        int latestYearRow = referenceFieldNameRow - 1;
-        int latestYearCol = referenceFieldNameCol - 1;
+        int latestYearRow = referenceFieldNameRow + REFERENCE_ROW_TO_YEAR_DISTANCE;
+        int latestYearCol = referenceFieldNameCol + REFERENCE_COL_TO_YEAR_DISTANCE;
         int latestYear = Integer.valueOf(table.get(latestYearRow).get(latestYearCol));
         List<HistoricalValue> historicalValues = new ArrayList<>();
         int colCount = 6;
