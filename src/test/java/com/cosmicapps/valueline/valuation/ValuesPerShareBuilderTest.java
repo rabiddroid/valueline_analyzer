@@ -45,10 +45,10 @@ public class ValuesPerShareBuilderTest {
 
         AvgAnnualPERatioPerShare dividendsDeclaredPerShare = new ValuesPerShareBuilder().with(table).build(AvgAnnualPERatioPerShare.class);
         Assertions.assertThat(dividendsDeclaredPerShare.projectedValue()).isEqualTo(28.0);
-        Assertions.assertThat(dividendsDeclaredPerShare.historicalValues())
-                .containsExactly(new HistoricalValue(2022, null), new HistoricalValue(2021, Double.valueOf(37.5)),
-                        new HistoricalValue(2020, Double.valueOf(38.3)), new HistoricalValue(2019, Double.valueOf(29.2)),
-                        new HistoricalValue(2018, Double.valueOf(28.4)), new HistoricalValue(2017, Double.valueOf("25.9")));
+        Assertions.assertThat(dividendsDeclaredPerShare.valuationMetrics())
+                .containsExactly(new ValuationMetric(2022, null), new ValuationMetric(2021, Double.valueOf(37.5)),
+                        new ValuationMetric(2020, Double.valueOf(38.3)), new ValuationMetric(2019, Double.valueOf(29.2)),
+                        new ValuationMetric(2018, Double.valueOf(28.4)), new ValuationMetric(2017, Double.valueOf("25.9")));
 
     }
 
@@ -62,10 +62,10 @@ public class ValuesPerShareBuilderTest {
                 .withReferencePointCol(6)
                 .build(AvgAnnualPERatioPerShare.class);
         Assertions.assertThat(dividendsDeclaredPerShare.projectedValue()).isEqualTo(28.0);
-        Assertions.assertThat(dividendsDeclaredPerShare.historicalValues())
-                .containsExactly(new HistoricalValue(2022, null), new HistoricalValue(2021, Double.valueOf(37.5)),
-                        new HistoricalValue(2020, Double.valueOf(38.3)), new HistoricalValue(2019, Double.valueOf(29.2)),
-                        new HistoricalValue(2018, Double.valueOf(28.4)), new HistoricalValue(2017, Double.valueOf("25.9")));
+        Assertions.assertThat(dividendsDeclaredPerShare.valuationMetrics())
+                .containsExactly(new ValuationMetric(2022, null), new ValuationMetric(2021, Double.valueOf(37.5)),
+                        new ValuationMetric(2020, Double.valueOf(38.3)), new ValuationMetric(2019, Double.valueOf(29.2)),
+                        new ValuationMetric(2018, Double.valueOf(28.4)), new ValuationMetric(2017, Double.valueOf("25.9")));
 
     }
 
@@ -75,10 +75,10 @@ public class ValuesPerShareBuilderTest {
 
         DividendsDeclaredPerShare dividendsDeclaredPerShare = new ValuesPerShareBuilder().with(table).build(DividendsDeclaredPerShare.class);
         Assertions.assertThat(dividendsDeclaredPerShare.projectedValue()).isEqualTo(1.9);
-        Assertions.assertThat(dividendsDeclaredPerShare.historicalValues())
-                .containsExactly(new HistoricalValue(2022, Double.valueOf(1.53)), new HistoricalValue(2021, Double.valueOf(1.34)),
-                        new HistoricalValue(2020, Double.valueOf(1.22)), new HistoricalValue(2019, Double.valueOf(1.05)),
-                        new HistoricalValue(2018, Double.valueOf(0.88)), new HistoricalValue(2017, Double.valueOf("0.69")));
+        Assertions.assertThat(dividendsDeclaredPerShare.valuationMetrics())
+                .containsExactly(new ValuationMetric(2022, Double.valueOf(1.53)), new ValuationMetric(2021, Double.valueOf(1.34)),
+                        new ValuationMetric(2020, Double.valueOf(1.22)), new ValuationMetric(2019, Double.valueOf(1.05)),
+                        new ValuationMetric(2018, Double.valueOf(0.88)), new ValuationMetric(2017, Double.valueOf("0.69")));
 
     }
 
@@ -91,10 +91,10 @@ public class ValuesPerShareBuilderTest {
                 .withReferencePointCol(6)
                 .build(DividendsDeclaredPerShare.class);
         Assertions.assertThat(dividendsDeclaredPerShare.projectedValue()).isEqualTo(1.9);
-        Assertions.assertThat(dividendsDeclaredPerShare.historicalValues())
-                .containsExactly(new HistoricalValue(2022, Double.valueOf(1.53)), new HistoricalValue(2021, Double.valueOf(1.34)),
-                        new HistoricalValue(2020, Double.valueOf(1.22)), new HistoricalValue(2019, Double.valueOf(1.05)),
-                        new HistoricalValue(2018, Double.valueOf(0.88)), new HistoricalValue(2017, Double.valueOf("0.69")));
+        Assertions.assertThat(dividendsDeclaredPerShare.valuationMetrics())
+                .containsExactly(new ValuationMetric(2022, Double.valueOf(1.53)), new ValuationMetric(2021, Double.valueOf(1.34)),
+                        new ValuationMetric(2020, Double.valueOf(1.22)), new ValuationMetric(2019, Double.valueOf(1.05)),
+                        new ValuationMetric(2018, Double.valueOf(0.88)), new ValuationMetric(2017, Double.valueOf("0.69")));
 
     }
 
@@ -105,10 +105,10 @@ public class ValuesPerShareBuilderTest {
 
         EarningsPerShare earningsPerShare = new ValuesPerShareBuilder().with(table).build(EarningsPerShare.class);
         Assertions.assertThat(earningsPerShare.projectedValue()).isEqualTo(9.7);
-        Assertions.assertThat(earningsPerShare.historicalValues())
-                .containsExactly(new HistoricalValue(2022, Double.valueOf(7.25)), new HistoricalValue(2021, Double.valueOf(5.91)),
-                        new HistoricalValue(2020, Double.valueOf(5.04)), new HistoricalValue(2019, Double.valueOf(5.32)),
-                        new HistoricalValue(2018, Double.valueOf(4.42)), new HistoricalValue(2017, Double.valueOf("3.48")));
+        Assertions.assertThat(earningsPerShare.valuationMetrics())
+                .containsExactly(new ValuationMetric(2022, Double.valueOf(7.25)), new ValuationMetric(2021, Double.valueOf(5.91)),
+                        new ValuationMetric(2020, Double.valueOf(5.04)), new ValuationMetric(2019, Double.valueOf(5.32)),
+                        new ValuationMetric(2018, Double.valueOf(4.42)), new ValuationMetric(2017, Double.valueOf("3.48")));
 
     }
 
@@ -121,10 +121,10 @@ public class ValuesPerShareBuilderTest {
                 .withReferencePointCol(6)
                 .build(EarningsPerShare.class);
         Assertions.assertThat(earningsPerShare.projectedValue()).isEqualTo(9.7);
-        Assertions.assertThat(earningsPerShare.historicalValues())
-                .containsExactly(new HistoricalValue(2022, Double.valueOf(7.25)), new HistoricalValue(2021, Double.valueOf(5.91)),
-                        new HistoricalValue(2020, Double.valueOf(5.04)), new HistoricalValue(2019, Double.valueOf(5.32)),
-                        new HistoricalValue(2018, Double.valueOf(4.42)), new HistoricalValue(2017, Double.valueOf("3.48")));
+        Assertions.assertThat(earningsPerShare.valuationMetrics())
+                .containsExactly(new ValuationMetric(2022, Double.valueOf(7.25)), new ValuationMetric(2021, Double.valueOf(5.91)),
+                        new ValuationMetric(2020, Double.valueOf(5.04)), new ValuationMetric(2019, Double.valueOf(5.32)),
+                        new ValuationMetric(2018, Double.valueOf(4.42)), new ValuationMetric(2017, Double.valueOf("3.48")));
 
     }
 

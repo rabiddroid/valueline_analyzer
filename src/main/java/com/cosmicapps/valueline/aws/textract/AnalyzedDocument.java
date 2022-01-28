@@ -36,6 +36,14 @@ public class AnalyzedDocument {
 
     }
 
+    public List<Block> getWords() {
+
+        return data.values().stream()
+                .filter(b -> BlockType.WORD.equals(b.blockType()))
+                .collect(Collectors.toList());
+
+    }
+
     List<Block> getTableCells(Block table) {
 
         List<Relationship> children = table.relationships().stream()
@@ -87,7 +95,11 @@ public class AnalyzedDocument {
                 .collect(Collectors.joining(" "));
     }
 
-
+    /**
+     * gets the table values for given table block
+     * @param table
+     * @return
+     */
     public  List<List<String>> getTableValues(Block table){
         return getTableValues(getTableCells(table));
     }

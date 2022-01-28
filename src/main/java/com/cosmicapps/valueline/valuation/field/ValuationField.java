@@ -1,14 +1,14 @@
 package com.cosmicapps.valueline.valuation.field;
 
-import com.cosmicapps.valueline.valuation.HistoricalValue;
+import com.cosmicapps.valueline.valuation.ValuationMetric;
 
 import java.util.List;
 
 public interface ValuationField {
 
-    List<HistoricalValue> historicalValues();
+    List<ValuationMetric> valuationMetrics();
 
-    void setHistoricalValues(List<HistoricalValue> value);
+    void setValuationMetrics(List<ValuationMetric> value);
 
     Double projectedValue();
 

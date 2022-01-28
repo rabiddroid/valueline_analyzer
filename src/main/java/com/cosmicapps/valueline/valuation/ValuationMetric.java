@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @Builder
 @AllArgsConstructor
-public class HistoricalValue {
+public class ValuationMetric {
 
     private int year;
     private Double value;

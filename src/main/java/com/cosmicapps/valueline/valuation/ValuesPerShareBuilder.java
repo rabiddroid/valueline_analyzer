@@ -27,23 +27,23 @@ public class ValuesPerShareBuilder {
         referenceFieldNameCol = referenceFieldLocation.getCol();
     }
 
-    protected List<HistoricalValue> getHistoricalValues(Point valuePerShareNameCoordinate) {
+    protected List<ValuationMetric> getHistoricalValues(Point valuePerShareNameCoordinate) {
         //update historical 5 values
         int latestYearRow = referenceFieldNameRow + REFERENCE_ROW_TO_YEAR_DISTANCE;
         int latestYearCol = referenceFieldNameCol + REFERENCE_COL_TO_YEAR_DISTANCE;
         int latestYear = Integer.valueOf(table.get(latestYearRow).get(latestYearCol));
-        List<HistoricalValue> historicalValues = new ArrayList<>();
+        List<ValuationMetric> valuationMetrics = new ArrayList<>();
         int colCount = 6;
         int currentYear = latestYear;
         int currentCol = latestYearCol;
 
         while (colCount-- > 0) {
-            historicalValues.add(HistoricalValue.builder()
+            valuationMetrics.add(ValuationMetric.builder()
                     .year(currentYear--)
                     .value(getDoubleFromCell(table.get(valuePerShareNameCoordinate.x).get(currentCol--))).
                     build());
         }
-        return historicalValues;
+        return valuationMetrics;
     }
 
     protected Double getProjectedValue(Point earningsPerShareNameCoordinate) {
@@ -88,7 +88,7 @@ public class ValuesPerShareBuilder {
         Point valueFieldCoordinate = getValueCoordinates();
 
 
-        valueFieldInstance.setHistoricalValues(getHistoricalValues(valueFieldCoordinate));
+        valueFieldInstance.setValuationMetrics(getHistoricalValues(valueFieldCoordinate));
         valueFieldInstance.setProjectedValue(getProjectedValue(valueFieldCoordinate));
 
 

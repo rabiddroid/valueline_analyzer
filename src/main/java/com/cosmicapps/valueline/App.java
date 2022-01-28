@@ -68,6 +68,7 @@ public class App {
             InputStream sourceStream = new FileInputStream(new File(sourceDoc));
             SdkBytes sourceBytes = SdkBytes.fromInputStream(sourceStream);
 
+
             // Get the input Document object as bytes
             Document myDoc = Document.builder()
                     .bytes(sourceBytes)
