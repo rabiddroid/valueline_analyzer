@@ -1,9 +1,9 @@
 package com.cosmicapps.valueline.valuation;
 
-import com.cosmicapps.valueline.valuation.field.ReferenceFieldLocation;
 import com.cosmicapps.valueline.valuation.field.AvgAnnualPERatioPerShare;
 import com.cosmicapps.valueline.valuation.field.DividendsDeclaredPerShare;
 import com.cosmicapps.valueline.valuation.field.EarningsPerShare;
+import com.cosmicapps.valueline.valuation.projection.Projections;
 import lombok.Data;
 
 import java.util.List;
@@ -11,45 +11,32 @@ import java.util.List;
 @Data
 public class ValueLineDocumentBuilder {
 
-    private List<List<String>> data;
-    private String ticker;
+  private String ticker;
+  private HistoricalValuations historicalValuations;
+  private Projections projections;
 
+  public ValueLineDocumentBuilder with(Projections projections) {
+    this.projections = projections;
+    return this;
+  }
 
-    public ValueLineDocumentBuilder with(List<List<String>> valuationTable) {
-        this.data = valuationTable;
-        return this;
-    }
+  public ValueLineDocumentBuilder with(HistoricalValuations historicalValuations) {
+    this.historicalValuations = historicalValuations;
+    return this;
+  }
 
-    public ValueLineDocumentBuilder with(String ticker) {
-        this.ticker = ticker;
-        return this;
-    }
+  public ValueLineDocumentBuilder with(String ticker) {
+    this.ticker = ticker;
+    return this;
+  }
 
+  public ValueLineDocument build() throws InstantiationException {
 
-    public ValueLineDocument build() throws InstantiationException {
-
-        ReferenceFieldLocation referenceFieldLocation = ReferenceFieldLocation.find(data);
-
-        return new ValueLineDocument(
-                this.ticker,
-                new ValuesPerShareBuilder()
-                        .with(data)
-                        .withReferencePointRow(referenceFieldLocation.getRow())
-                        .withReferencePointCol(referenceFieldLocation.getCol())
-                        .build(EarningsPerShare.class),
-                new ValuesPerShareBuilder()
-                        .with(data)
-                        .withReferencePointRow(referenceFieldLocation.getRow())
-                        .withReferencePointCol(referenceFieldLocation.getCol())
-                        .build(DividendsDeclaredPerShare.class),
-                new ValuesPerShareBuilder()
-                        .with(data)
-                        .withReferencePointRow(referenceFieldLocation.getRow())
-                        .withReferencePointCol(referenceFieldLocation.getCol())
-                        .build(AvgAnnualPERatioPerShare.class)
-                );
-
-
-    }
-
+    return new ValueLineDocument(
+        this.ticker,
+        new EarningsPerShare(projections, historicalValuations),
+        new DividendsDeclaredPerShare(projections, historicalValuations),
+        new AvgAnnualPERatioPerShare(projections, historicalValuations)
+    );
+  }
 }

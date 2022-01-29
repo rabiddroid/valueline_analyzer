@@ -1,6 +1,7 @@
 package com.cosmicapps.valueline.valuation.field;
 
 import com.cosmicapps.valueline.valuation.ValuationMetric;
+import com.cosmicapps.valueline.valuation.ValuationMetricName;
 
 import java.util.List;
 
@@ -14,8 +15,6 @@ public interface ValuationField {
 
     void setProjectedValue(Double value);
 
-    int relativeDistanceXFromReference();
-
-    String fieldName();
+    ValuationMetricName metricName();
 
 }

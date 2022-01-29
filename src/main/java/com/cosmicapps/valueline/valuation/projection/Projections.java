@@ -1,47 +1,53 @@
 package com.cosmicapps.valueline.valuation.projection;
 
-
 import com.cosmicapps.valueline.aws.textract.AnalyzedDocument;
+import com.cosmicapps.valueline.valuation.ValuationMetricName;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Data
+@AllArgsConstructor
 public class Projections {
 
-    private Double earningsPerShare;
-    private Double dividendsDeclaredPerShare;
-    private Double AvgAnnualPERatioPerShare;
+  private Map<ValuationMetricName, Double> values;
 
-    public static class ProjectionsBuilder{
+  public Double getEarningsPerShare() {
+    return getValues().get(ValuationMetricName.EARNINGS);
+  }
 
-        private AnalyzedDocument analyzedDocument;
+  public Double getDividendsDeclaredPerShare() {
+    return getValues().get(ValuationMetricName.DIVIDENDS_DECLARED);
+  }
 
-        public ProjectionsBuilder withAnalyzedDocument(AnalyzedDocument analyzedDocument){
-            this.analyzedDocument = analyzedDocument;
-            return this;
-        }
+  public Double getAvgAnnualPERatioPerShare() {
+    return getValues().get(ValuationMetricName.AVG_ANNUAL_PE);
+  }
 
-        public Projections build(){
+  public static class ProjectionsBuilder {
 
+    private AnalyzedDocument analyzedDocument;
 
-            //assuming only 1 table block in analyzed document
-            List<List<String>> table = analyzedDocument.getTableValues(analyzedDocument.getTables().get(0));
-
-
-            Projections projections = new Projections();
-            ProjectionsValueExtractor projectionsValueExtractor = new ProjectionsValueExtractor(table);
-            projections.setEarningsPerShare(projectionsValueExtractor.get("earnings"));
-            projections.setDividendsDeclaredPerShare(projectionsValueExtractor.get("div'ds decl'd"));
-            projections.setAvgAnnualPERatioPerShare(projectionsValueExtractor.get("avg ann'l p/e"));
-
-
-            return projections;
-
-
-        }
-
-
+    public ProjectionsBuilder withAnalyzedDocument(AnalyzedDocument analyzedDocument) {
+      this.analyzedDocument = analyzedDocument;
+      return this;
     }
 
+    public Projections build() {
+
+      //assuming only 1 table block in analyzed document
+      List<List<String>> table = analyzedDocument.getTableValues(
+          analyzedDocument.getTables().get(0));
+      ProjectionsValueExtractor projectionsValueExtractor = new ProjectionsValueExtractor(table);
+
+      return new Projections(
+          Arrays.stream(ValuationMetricName.values())
+              .collect(Collectors.toMap(vm -> vm, vm -> projectionsValueExtractor.get(vm.key()))
+              ));
+    }
+  }
 }

@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ValuesPerShareBuilderTest {
+public class ValuationsBuilderTest {
 
-    private List<List<String>> table;
+/*    private List<List<String>> table;
 
     @Before
     public void setUp() throws Exception {
@@ -43,7 +43,7 @@ public class ValuesPerShareBuilderTest {
     public void avgAnnualPERatioPerShare_withTable() throws InstantiationException {
 
 
-        AvgAnnualPERatioPerShare dividendsDeclaredPerShare = new ValuesPerShareBuilder().with(table).build(AvgAnnualPERatioPerShare.class);
+        AvgAnnualPERatioPerShare dividendsDeclaredPerShare = new ValuationsBuilder().with(table).build(AvgAnnualPERatioPerShare.class);
         Assertions.assertThat(dividendsDeclaredPerShare.projectedValue()).isEqualTo(28.0);
         Assertions.assertThat(dividendsDeclaredPerShare.valuationMetrics())
                 .containsExactly(new ValuationMetric(2022, null), new ValuationMetric(2021, Double.valueOf(37.5)),
@@ -56,7 +56,7 @@ public class ValuesPerShareBuilderTest {
     public void avgAnnualPERatioPerShare_withTableAndRowAndCol() throws InstantiationException {
 
 
-        AvgAnnualPERatioPerShare dividendsDeclaredPerShare = new ValuesPerShareBuilder()
+        AvgAnnualPERatioPerShare dividendsDeclaredPerShare = new ValuationsBuilder()
                 .with(table)
                 .withReferencePointRow(1)
                 .withReferencePointCol(6)
@@ -73,7 +73,7 @@ public class ValuesPerShareBuilderTest {
     public void dividendsPerShare_withTable() throws InstantiationException {
 
 
-        DividendsDeclaredPerShare dividendsDeclaredPerShare = new ValuesPerShareBuilder().with(table).build(DividendsDeclaredPerShare.class);
+        DividendsDeclaredPerShare dividendsDeclaredPerShare = new ValuationsBuilder().with(table).build(DividendsDeclaredPerShare.class);
         Assertions.assertThat(dividendsDeclaredPerShare.projectedValue()).isEqualTo(1.9);
         Assertions.assertThat(dividendsDeclaredPerShare.valuationMetrics())
                 .containsExactly(new ValuationMetric(2022, Double.valueOf(1.53)), new ValuationMetric(2021, Double.valueOf(1.34)),
@@ -86,7 +86,7 @@ public class ValuesPerShareBuilderTest {
     public void dividendsPerShare_withTableAndRowAndCol() throws InstantiationException {
 
 
-        DividendsDeclaredPerShare dividendsDeclaredPerShare = new ValuesPerShareBuilder().with(table)
+        DividendsDeclaredPerShare dividendsDeclaredPerShare = new ValuationsBuilder().with(table)
                 .withReferencePointRow(1)
                 .withReferencePointCol(6)
                 .build(DividendsDeclaredPerShare.class);
@@ -103,7 +103,7 @@ public class ValuesPerShareBuilderTest {
     public void earningsPerShare_withTable() throws InstantiationException {
 
 
-        EarningsPerShare earningsPerShare = new ValuesPerShareBuilder().with(table).build(EarningsPerShare.class);
+        EarningsPerShare earningsPerShare = new ValuationsBuilder().with(table).build(EarningsPerShare.class);
         Assertions.assertThat(earningsPerShare.projectedValue()).isEqualTo(9.7);
         Assertions.assertThat(earningsPerShare.valuationMetrics())
                 .containsExactly(new ValuationMetric(2022, Double.valueOf(7.25)), new ValuationMetric(2021, Double.valueOf(5.91)),
@@ -116,7 +116,7 @@ public class ValuesPerShareBuilderTest {
     public void earningsPerShare_withTableAndRowAndCol() throws InstantiationException {
 
 
-        EarningsPerShare earningsPerShare = new ValuesPerShareBuilder().with(table)
+        EarningsPerShare earningsPerShare = new ValuationsBuilder().with(table)
                 .withReferencePointRow(1)
                 .withReferencePointCol(6)
                 .build(EarningsPerShare.class);
@@ -126,7 +126,7 @@ public class ValuesPerShareBuilderTest {
                         new ValuationMetric(2020, Double.valueOf(5.04)), new ValuationMetric(2019, Double.valueOf(5.32)),
                         new ValuationMetric(2018, Double.valueOf(4.42)), new ValuationMetric(2017, Double.valueOf("3.48")));
 
-    }
+    }*/
 
     /*    @Test
     public void withTable() {

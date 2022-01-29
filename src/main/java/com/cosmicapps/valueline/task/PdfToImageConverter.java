@@ -71,7 +71,7 @@ public class PdfToImageConverter{
                 acroForm.refreshAppearances();
             }
 
-            ImageType imageType = ImageType.BINARY;
+            ImageType imageType = ImageType.RGB;
             changeCropBox(document, cropBoxLowerLeftX, cropBoxLowerLeftY, cropBoxUpperRightX, cropBoxUpperRightY);
             if (quality < 0.0F) {
                 quality = "png".equals(imageFormat) ? 0.0F : 1.0F;

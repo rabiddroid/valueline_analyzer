@@ -1,11 +1,17 @@
 package com.cosmicapps.valueline.valuation.field;
 
+import com.cosmicapps.valueline.valuation.HistoricalValuations;
+import com.cosmicapps.valueline.valuation.ValuationMetricName;
+import com.cosmicapps.valueline.valuation.projection.Projections;
+
 public class RevenuePerShare extends ValuationPerShareAbstract {
 
-    public static String referenceName = "revenues per sh";
-    private static final int RELATIVE_POS_FROM_REVPERSHARE_NAME = -2;
+    public RevenuePerShare(Projections projections,
+        HistoricalValuations historicalValuations) {
+        super(ValuationMetricName.REVENUE,projections,historicalValuations);
+    }
 
     public RevenuePerShare() {
-        super(referenceName, RELATIVE_POS_FROM_REVPERSHARE_NAME);
+        super(ValuationMetricName.REVENUE, null, null);
     }
 }

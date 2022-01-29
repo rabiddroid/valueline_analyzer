@@ -1,11 +1,18 @@
 package com.cosmicapps.valueline.valuation.field;
 
+import com.cosmicapps.valueline.valuation.HistoricalValuations;
+import com.cosmicapps.valueline.valuation.ValuationMetricName;
+import com.cosmicapps.valueline.valuation.projection.Projections;
+
 public class DividendsDeclaredPerShare extends ValuationPerShareAbstract {
 
-    private static String referenceName = "div'ds decl'd per sh";
-    private static final int RELATIVE_POS_FROM_REVPERSHARE_NAME = 1;
+    public DividendsDeclaredPerShare(
+        Projections projections,
+        HistoricalValuations historicalValuations) {
+        super(ValuationMetricName.DIVIDENDS_DECLARED,projections,historicalValuations);
+    }
 
     public DividendsDeclaredPerShare() {
-        super(referenceName, RELATIVE_POS_FROM_REVPERSHARE_NAME);
+        super(ValuationMetricName.DIVIDENDS_DECLARED, null, null);
     }
 }

@@ -21,7 +21,7 @@ public class ProjectionsValueExtractor {
                         .toLowerCase().startsWith(key))
                 .findFirst();
 
-        return earnings.isPresent() ? Double.valueOf(earnings.get().get(1)) : null;
+        return earnings.isPresent() ? Double.valueOf(earnings.get().get(1)) : 0D;
 
     }
 

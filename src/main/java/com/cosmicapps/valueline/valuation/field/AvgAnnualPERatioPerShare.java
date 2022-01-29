@@ -1,11 +1,18 @@
 package com.cosmicapps.valueline.valuation.field;
 
+import com.cosmicapps.valueline.valuation.HistoricalValuations;
+import com.cosmicapps.valueline.valuation.ValuationMetricName;
+import com.cosmicapps.valueline.valuation.projection.Projections;
+
 public class AvgAnnualPERatioPerShare extends ValuationPerShareAbstract {
 
-    private static String referenceName = "avg ann'l p/e ratio";
-    private static final int RELATIVE_POS_FROM_REVPERSHARE_NAME = 5;
+    public AvgAnnualPERatioPerShare(
+        Projections projections,
+        HistoricalValuations historicalValuations) {
+        super(ValuationMetricName.AVG_ANNUAL_PE,projections,historicalValuations);
+    }
 
     public AvgAnnualPERatioPerShare() {
-        super(referenceName, RELATIVE_POS_FROM_REVPERSHARE_NAME);
+        super(ValuationMetricName.AVG_ANNUAL_PE, null, null);
     }
 }

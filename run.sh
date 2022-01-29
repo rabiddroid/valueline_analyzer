@@ -1,2 +1,2 @@
 mvn clean package
-mvn exec:java -Dexec.mainClass="com.cosmicapps.valueline.App" -Dexec.args="/Users/jeffrey/Dev/valueline_analyzer/ext/resources/visa_VL.jpg /Users/jeffrey/Dev/valueline_analyzer/ext/resources/visa_VL_metrics.csv" > output.txt
+mvn exec:java -Dexec.mainClass="com.cosmicapps.valueline.App" -Dexec.args="/Users/jeffrey/Dev/valueline_analyzer/ext/resources/visa_VL.jpg /Users/jeffrey/Development/valueline_analyzer/target/visa_VL_metrics.csv" > output.txt
