@@ -1,0 +1,251 @@
+320
+200
+160
+120
+100
+80
+60
+40
+18
+Percent
+shares
+traded
+18
+12
+6
+E
+Target Price Range
+2024 2025 2026
+HONEYWELL NDQ-HON 206.43 24.4 25.7
+17.0 1.28 1.9%
+TIMELINESS 3 Lowered 9/10/21
+SAFETY 1 Raised 7/25/08
+TECHNICAL 2 Raised 1/7/22
+BETA 1.20 (1.00 = Market)
+18-Month Target Price Range
+Low-High Midpoint (% to Mid)
+$179-$318 $249 (20%)
+2024-26 PROJECTIONS
+Ann’l Total
+Price Gain Return
+High 260 (+25%) 8%
+Low 215 (+5%) 3%
+Institutional Decisions
+1Q2021 2Q2021 3Q2021
+to Buy 965 1023 970
+to Sell 932 872 893
+Hld’s(000) 528760 524765 517278
+High: 53.7 62.3 64.5 91.6 102.4 107.4 120.0 156.7 167.7 183.1 216.7 236.9
+Low: 36.7 41.2 52.2 64.2 82.9 87.0 93.7 115.6 123.5 129.1 101.1 194.6
+% TOT. RETURN 11/21
+THIS VL ARITH.*
+STOCK INDEX
+1 yr. 0.9 26.9
+3 yr. 46.4 56.3
+5 yr. 96.3 82.9
+CAPITAL STRUCTURE as of 9/30/21
+Total Debt $21249 mill. Due 5 Yrs $10500 mill.
+LT Debt $14346 mill. LT Interest $800 mill.
+(44% of Capital)
+Leases, Uncapitalized Annual rentals $287.0 mill.
+Pension Assets-12/20 $28.8 bill.
+Oblig. $25.7 bill.
+Preferred Stock None
+Common Stock 688,422,975 shares
+MARKET CAP: $142 billion (Large Cap)
+CURRENT POSITION 2019 2020 9/30/21
+($MILL.)
+Cash Assets 10416 15220 12136
+Receivables 7493 6827 7239
+Inventory (FIFO) 4421 4489 4967
+Other 1973 1639 1691
+Current Assets 24303 28175 26033
+Accts Payable 5730 5750 6116
+Debt Due 4892 6042 6903
+Other 7476 7405 7188
+Current Liab. 18098 19197 20207
+ANNUAL RATES Past Past Est’d ’18-’20
+of change (per sh) 10 Yrs. 5 Yrs. to ’24-’26
+Sales 1.5% .5% 4.5%
+‘‘Cash Flow’’ 8.0% 6.5% 9.5%
+Earnings 9.0% 7.0% 11.0%
+Dividends 11.0% 12.0% 8.0%
+Book Value 8.0% 2.0% 5.0%
+Cal- Full
+endar Year
+QUARTERLY SALES ($ mill.)
+Mar.31 Jun.30 Sep.30 Dec.31
+2018 10392 10919 10762 9729 41802
+2019 8884 9243 9086 9496 36709
+2020 8463 7477 7797 8900 32637
+2021 8454 8808 8473 8785 34520
+2022 8780 9500 9150 9520 36950
+Cal- Full
+endar Year
+EARNINGS PER SHARE A
+Mar.31 Jun.30 Sep.30 Dec.31
+2018 1.95 2.12 2.03 1.91 8.01
+2019 1.92 2.10 2.08 2.06 8.16
+2020 2.21 1.26 1.56 2.07 7.10
+2021 1.92 2.02 2.02 2.09 8.05
+2022 2.05 2.30 2.30 2.40 9.05
+Cal- Full
+endar Year
+QUARTERLY DIVIDENDS PAID B■
+Mar.31 Jun.30 Sep.30 Dec.31
+2018 .745 .745 .745 .82 3.06
+2019 .82 .82 .82 .90 3.36
+2020 .90 .90 .90 .93 3.63
+2021 .93 .93 .93 .98
+2022
+2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018
+33.34 39.18 46.33 49.76 40.44 42.62 47.15 48.12 49.83 51.53 50.08 51.66 53.98 57.33
+2.93 3.59 4.39 5.03 4.07 4.25 5.11 5.72 6.32 6.83 7.34 8.06 8.80 9.81
+2.04 2.51 3.16 3.76 2.85 3.00 3.79 4.48 4.97 5.56 6.04 6.59 7.11 8.01
+.83 .91 1.00 1.10 1.21 1.21 1.37 1.53 1.68 1.87 2.15 2.45 2.74 3.06
+.82 .92 1.03 1.20 .80 .83 1.03 1.13 1.21 1.40 1.39 1.44 1.37 1.14
+13.57 12.14 12.35 9.78 11.57 13.62 13.95 16.58 22.29 22.57 23.73 25.46 23.01 24.95
+829.48 800.59 746.55 734.59 764.21 783.00 774.70 782.80 783.80 782.20 770.40 760.80 750.90 729.09
+18.1 16.3 17.3 12.8 12.0 14.7 14.3 13.2 16.0 16.9 16.9 17.0 18.9 18.8
+.96 .88 .92 .77 .80 .94 .90 .84 .90 .89 .85 .89 .95 1.02
+2.2% 2.2% 1.8% 2.3% 3.5% 2.7% 2.5% 2.6% 2.1% 2.0% 2.1% 2.2% 2.0% 2.0%
+36529 37665 39055 40306 38581 39302 40534 41802
+14.6% 16.0% 16.7% 17.4% 20.0% 20.4% 20.4% 18.7%
+957.0 926.0 989.0 924.0 883.0 1030.0 1115.0 1116.0
+2998.0 3552.0 3965.0 4422.0 4768.0 5104.0 5492.0 6035.0
+26.4% 26.4% 26.7% 25.6% 26.4% 23.7% 19.8% 9.8%
+8.2% 9.4% 10.2% 11.0% 12.4% 13.0% 13.5% 14.4%
+3859.0 4553.0 6983.0 7418.0 1682.0 6727.0 7141.0 5438.0
+6881.0 6395.0 6801.0 6046.0 5554.0 12182 12573 9756.0
+10806 12975 17467 17657 18283 19372 17281 18187
+17.9% 19.2% 17.0% 19.3% 20.6% 16.7% 18.9% 22.2%
+27.7% 27.4% 22.7% 25.0% 26.1% 26.3% 31.8% 33.2%
+17.6% 18.0% 15.0% 16.5% 16.6% 16.5% 19.5% 20.7%
+36% 34% 34% 34% 36% 38% 39% 38%
+2019 2020 2021 2022 © VALUE LINE PUB. LLC 24-26
+51.62 46.84 50.15 53.85 Sales per sh 66.90
+9.91 8.68 9.85 11.00 ‘‘Cash Flow’’ per sh 16.45
+8.16 7.10 8.05 9.05 Earnings per sh A 14.00
+3.36 3.63 3.77 4.05 Div’ds Decl’d per sh B■ 5.25
+1.18 1.30 1.35 1.45 Cap’l Spending per sh 1.60
+26.02 25.20 26.15 27.70 Book Value per sh C 33.80
+711.10 696.80 688.00 686.00 Common Shs Outst’g D 680.00
+20.3 23.0 27.1 Avg Ann’l P/E Ratio 17.0
+1.08 1.19 1.45 Relative P/E Ratio .95
+2.0% 2.2% 1.7% Avg Ann’l Div’d Yield 2.2%
+36709 32637 34520 36950 Sales ($mill) 45500
+21.6% 21.4% 21.7% 22.2% Operating Margin 24.3%
+1088.0 1002.0 1250 1350 Depreciation ($mill) 1670
+5960.0 5049.0 5540 6210 Net Profit ($mill) 9520
+18.0% 18.3% 22.0% 22.0% Income Tax Rate 22.0%
+16.2% 15.5% 16.0% 16.8% Net Profit Margin 20.9%
+6205.0 8978.0 6500 7200 Working Cap’l ($mill) 10800
+11110 16342 14200 13500 Long-Term Debt ($mill) 11900
+18501 17556 18000 19000 Shr. Equity ($mill) C 23000
+20.7% 15.4% 18.5% 20.0% Return on Total Cap’l 28.0%
+32.2% 28.8% 31.0% 32.5% Return on Shr. Equity 41.5%
+19.0% 14.0% 16.5% 18.0% Retained to Com Eq 26.0%
+41% 51% 47% 45% All Div’ds to Net Prof 38%
+Company’s Financial Strength A++
+Stock’s Price Stability 90
+Price Growth Persistence 95
+Earnings Predictability 95
+(A) Diluted earnings. Excludes nonrecurring:
+’05, d10¢; ’06, 1¢; ’10, d41¢; ’11, d$1.18; ’12,
+d79¢; ’13, d5¢; ’14, d23¢; ’16, 39¢; ’17, d$4.97;
+’18, 97¢; ’19, 25¢; ’20, d38¢. Quarterly figures
+may not sum due to rounding. Next earnings
+report due late January. (B) Dividends histori-
+cally paid in early March, June, September,
+and December. ■ Dividend reinvestment plan
+available. (C) Includes intangibles. In ’20:
+$19.6 billion, $28.13 a share. (D) In millions.
+(E) Spunoff Garrett Motion (GTX) and Residio
+Tech. (REZI) 10/18.
+BUSINESS: Honeywell International is a diversified technol-
+ogy/manufacturing company, serving customers in four segments;
+Aerospace (35% of ’20 sales) is a supplier of products, software,
+and services to OEMs; Building Tech. (16%) provides products and
+software to ensure facility safety, effeciency, and production; Per-
+formance Mats. (29%) deals in process tech. and automated solu-
+tions; Safety and Productivity (20%) focuses on improving prod-
+uctivity, safety, and performance. Foreign sales were 40% of 2020
+total. Has 103,000 emplys. Vanguard owns 7.4% of common;
+BlackRock, 6.2%; offs. & dirs., less than 1% (3/21 Proxy). CEO:
+Darius Adamczyk. Inc.: DE. Addr.: 300 South Tryon Street, Char-
+lotte, NC 28202. Tel.: 973-455-2000. Internet: www.honeywell.com.
+Honeywell’s earnings targets for 2021
+and 2022 have been recalibrated to
+$8.05 and $9.05 a share, respectively.
+These figures are a nickel and a dime
+lower than where they stood three months
+earlier. The downward adjustments are
+simply to reflect the lower sales tallies we
+now envision for the years. Third-quarter
+revenues missed the mark by about $225
+million, as aerospace receipts grew by a
+lower percentage than we initially
+thought. Too, the backdrop heading into
+the winter months has grown increasingly
+unfavorable with inflation and supply-
+chain concerns showing no signs of letting
+up. Of course, situations can evolve quick-
+ly in the present day and if that turns out
+to be the case here, our 2022 presentation
+would brighten.
+Recent pressures on the share price
+can be directly tied to the omicron
+variant of the coronavirus. Industrial
+stocks have been punished of late because
+pundits are concerned that this more con-
+tagious strain could disrupt economic
+growth. Airlines were some of the hardest
+hit stocks when COVID first showed up on
+the radar, and HON has serious exposure
+to the aerospace arena, so it would be par-
+ticularly vulnerable on that front.
+The new Honeywell Transmission
+Risk Air Monitor looks like a game
+changer. The company has seen sizable
+gains in its healthy building solutions and
+services, and these new devices, while still
+detecting carbon monoxide and other
+harmful gases, can alert people to in-
+creased risks of airborne viruses. The
+pandemic has brought indoor air quality to
+the forefront of many minds and these
+monitors are a noticeable advancement.
+This top-quality stock should be ap-
+pealing to the income-minded at this
+juncture. The blue chip is neutrally
+ranked for year-ahead relative price per-
+formance. Too, appreciation potential for
+the pull to 2024-2026 is subpar. On the
+other hand, the quarterly dividend payout
+was boosted to $0.98 to close out 2021. The
+hike pushed this equity’s yield above the
+Value Line median. Further, we would be
+remiss if we did not point out that HON is
+a rock-solid defensive play if the volatility
+carries into 2022. The aerospace world
+needs to hold firm, however.
+Erik M. Manning January 7, 2022
+LEGENDS
+14.0 x ″Cash Flow″ p sh. . . . Relative Price Strength
+Options: Yes
+Shaded area indicates recession
+© 2021 Value Line, Inc. All rights reserved. Factual material is obtained from sources believed to be reliable and is provided without warranties of any kind.
+THE PUBLISHER IS NOT RESPONSIBLE FOR ANY ERRORS OR OMISSIONS HEREIN. This publication is strictly for subscriber’s own, non-commercial, internal use. No part
+of it may be reproduced, resold, stored or transmitted in any printed, electronic or other form, or used for generating or marketing any printed or electronic publication, service or product.
+To subscribe call 1-800-VALUELINE
+RECENT
+PRICE
+P/E
+RATIO
+RELATIVE
+P/E RATIO
+DIV’D
+YLD( )Trailing:
+Median:
+VALUE
+LINE
