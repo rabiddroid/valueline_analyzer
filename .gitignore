@@ -1,8 +1,8 @@
-.DS_Store
-.idea/
-.mvn/
-mvnw
+**/\.DS_Store
+/.idea/
+/.mvn/
+/mvnw
 mvnw.cmd
-target/
-valueline/
-*.iml
+/target
+valueline_analyzer.iml
+/valueline_data
