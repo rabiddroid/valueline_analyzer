@@ -57,7 +57,7 @@ public class ValueLineDataPersistance {
   }
 
   private Double getDoubleValue(ValuationMetric valuationMetric) {
-    return getDoubleValue(valuationMetric.getValue());
+    return getDoubleValue(valuationMetric != null ? valuationMetric.getValue() : null);
   }
 
   private Double getDoubleValue(Double value) {
