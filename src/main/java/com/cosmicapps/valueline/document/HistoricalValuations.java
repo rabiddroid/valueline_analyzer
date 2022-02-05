@@ -1,6 +1,7 @@
 package com.cosmicapps.valueline.document;
 
 import com.cosmicapps.valueline.aws.textract.AnalyzedDocument;
+import com.cosmicapps.valueline.document.field.DoubleValue;
 import io.quarkus.logging.Log;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -74,13 +75,7 @@ public class HistoricalValuations {
     }
 
     private Double getaDouble(String value) {
-
-      try {
-        return Double.valueOf(value.trim());
-      } catch (NumberFormatException e) {
-        Log.warnf("unable to convert to double : %s", value);
-        return null;
-      }
+      return new DoubleValue(value).get();
     }
   }
 }

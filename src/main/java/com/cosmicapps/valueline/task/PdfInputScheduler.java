@@ -29,6 +29,9 @@ public class PdfInputScheduler {
   @Inject
   private AnalyticsReportFileWriter analyticsReportFileWriter;
 
+  @ConfigProperty(name = "data_extraction.show_timing", defaultValue = "false")
+  private boolean showTiming;
+
   @PostConstruct
   public void init() throws IOException {
     Log.debug("setting up staging folder");
@@ -50,7 +53,17 @@ public class PdfInputScheduler {
           .forEach(fname -> {
             Log.debugf("file found:%s", fname);
             try {
+
+              long startTime = System.nanoTime();
+
               valuelineDataExtraction.execute(fname);
+
+              if (showTiming) {
+                long endTime = System.nanoTime();
+                long duration = endTime - startTime;
+                Log.infof("Extracted data from:%s in %dms%n", fname, duration / 1000000L);
+              }
+
               newFilesFound.set(true);
             } catch (InstantiationException | IOException e) {
               Log.errorf("file operations failed for:%s", fname);

@@ -14,10 +14,12 @@ import org.apache.pdfbox.pdmodel.interactive.form.PDAcroForm;
 import org.apache.pdfbox.rendering.ImageType;
 import org.apache.pdfbox.rendering.PDFRenderer;
 import org.apache.pdfbox.tools.imageio.ImageIOUtil;
+import org.jboss.logging.Logger;
 
 @Builder
-@Slf4j
 public class PdfToImageConverter{
+    
+    private static Logger Log = Logger.getLogger(PdfToImageConverter.class);
 
     private String pdfFileName;
     @Builder.Default
@@ -44,7 +46,7 @@ public class PdfToImageConverter{
 
         while(var5.hasNext()) {
             PDPage page = (PDPage)var5.next();
-            System.out.println("resizing page");
+            Log.debug("resizing page...");
             PDRectangle rectangle = new PDRectangle();
             rectangle.setLowerLeftX(a);
             rectangle.setLowerLeftY(b);
@@ -93,11 +95,11 @@ public class PdfToImageConverter{
             long duration = endTime - startTime;
             int count = 1 + endPage - startPage;
             if (showTime) {
-                log.info("Rendered %d page%s in %dms%n", count, count == 1 ? "" : "s", duration / 1000000L);
+                Log.infof("Rendered %d page%s in %dms%n", count, count == 1 ? "" : "s", duration / 1000000L);
             }
 
         } catch (IOException e) {
-           log.info("conversion failed.",e);
+           Log.info("conversion failed.",e);
         }
 
 
